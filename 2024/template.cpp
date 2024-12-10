@@ -7,10 +7,13 @@
 
 using namespace std;
 
-vector<vector<int>> read_input(const string &fileName) {
-  ifstream file(fileName);
+int ans = -1;
+int m, n;
+vector<vector<int>> input;
+void read_input(const string &file_name) {
+  ifstream file(file_name);
   if (!file.is_open()) {
-    cerr << "Failed to open the file: " << fileName << '\n';
+    cerr << "Failed to open the file: " << file_name << '\n';
     exit(1);
   }
   string line;
@@ -18,23 +21,21 @@ vector<vector<int>> read_input(const string &fileName) {
   while (getline(file, line)) {
     istringstream iss(line);
     int number;
-    vector<int> numbers;
+    vector<int> row;
     while (iss >> number) {
-      numbers.push_back(number);
+      row.push_back(number);
     }
-    rows.push_back(numbers);
+    rows.push_back(row);
   }
-  return rows;
 }
 
 void solve() {
   
 }
 
-int ans = -1;
 int main() {
   string path = filesystem::current_path()/"2024/inputs/_.txt";
-  vector<vector<int>> input = read_input(path);
+  read_input(path);
   solve();
   cout << "ans: " << ans << endl;
 

@@ -36,7 +36,6 @@ int solve(string &s) {
   bool mul = true;
   for (size_t i = 0; i < all_matches.size(); i++) {
     const auto &match = all_matches[i];
-    cout << match[0] << ans << ' '<< mul << '\n';
     if (match[0] == "do()") {
       mul = true;
     } else if (match[0] == "don't()") {
