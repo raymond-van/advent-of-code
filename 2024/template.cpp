@@ -7,27 +7,24 @@
 
 using namespace std;
 
-int ans = 0;
-int m, n;
+int ans = 0, m = 0, n = 0;
 vector<vector<int>> input;
 void read_input(const string &file_name) {
   try {
-
     ifstream file(file_name);
     if (!file.is_open()) {
       cerr << "Failed to open the file: " << file_name << '\n';
       exit(1);
     }
     string line;
-    vector<vector<int>> rows;
     while (getline(file, line)) {
       istringstream iss(line);
-      int number;
+      int a;
       vector<int> row;
-      while (iss >> number) {
-        row.push_back(number);
+      while (iss >> a) {
+        row.push_back(a);
       }
-      rows.push_back(row);
+      input.push_back(row);
     }
   } catch (const exception &e) {
     cerr << "Caught exception reading input: " << e.what() << '\n';
@@ -46,8 +43,11 @@ void solve() {
 
 int main() {
   try {
-    string path = filesystem::current_path() / "2024/inputs/_.txt";
+    string path = filesystem::current_path() / "2024/inputs/test.txt";
     read_input(path);
+    m = input.size();
+    // n = input[0].size();
+    cout << "m: " << m << " n: " << n << '\n'; 
     solve();
     cout << "ans: " << ans << endl;
   } catch (const exception &e) {
