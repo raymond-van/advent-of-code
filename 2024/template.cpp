@@ -7,6 +7,8 @@
 
 using namespace std;
 
+typedef unsigned long long ll;
+
 int ans = 0, m = 0, n = 0;
 vector<vector<int>> input;
 void read_input(const string &file_name) {
