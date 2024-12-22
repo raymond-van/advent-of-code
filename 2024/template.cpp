@@ -48,10 +48,11 @@ int main() {
     string path = filesystem::current_path() / "2024/inputs/test.txt";
     read_input(path);
     m = input.size();
+    cout << "m: " << m << '\n'; 
     // n = input[0].size();
-    cout << "m: " << m << " n: " << n << '\n'; 
+    // cout << "m: " << m << " n: " << n << '\n'; 
     solve();
-    cout << "ans: " << ans << endl;
+    cout << "ans: " << ans << '\n';
   } catch (const exception &e) {
     cerr << "Caught exception (main): " << e.what() << '\n';
     return 1;
