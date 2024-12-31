@@ -4,7 +4,6 @@
 #include <set>
 #include <sstream>
 #include <string>
-#include <unordered_set>
 #include <vector>
 
 using namespace std;
@@ -63,6 +62,7 @@ void dfs(int i, int j, char c, int &area, vector<string> &sides,
   bool valid[4] = {false};
   char same[4] = {false};
   char ch[4] = {'#'};
+
   for (int d = 0; d < 4; d++) {
     int ii = i + dir[d];
     int jj = j + dir[d + 1];
